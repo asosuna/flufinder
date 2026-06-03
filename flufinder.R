@@ -4,7 +4,15 @@ upload_fasta <- function(fasta_filename) {
              set.attributes = FALSE)
 }
 
+
+
 trypsinize <- function(proteins) {
   library(stringr)
   lapply(proteins, str_split_1, pattern="(?<=R|K)")
+}
+
+
+split_peptides <- function(peptides) {
+  library(stringr)
+  lapply(peptides, str_split, pattern="")
 }
